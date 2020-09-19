@@ -1,9 +1,4 @@
-
-<div class="center jumbotron">
-  <h3>Welcome to Kaobook</h3>
-
-  <h4>This is the home page</h4>
-
-  <%= link_to "Sign up now!", sessions_path, class: "btn btn-lg btn-primary" %>
-</div>
- <%= link_to image_tag("f_logo.png", alt: "kao_book logo", width: "150px") %>
+<% if logged_in? %>
+<% else %>
+  <% render template: "users/new" %>
+<% end %>
