@@ -1,2 +1,4 @@
 <h1><%= @user.name %>のページ</h1>
 <p>メールアドレス: <%= @user.email %></p>
+<h3>新規投稿</h3>
+<%= link_to "新規投稿", new_post_url, class:'btn btn-primary btn-lg' %>

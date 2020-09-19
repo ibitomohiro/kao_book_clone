@@ -1,3 +1,5 @@
+<h1>新しく投稿する</h1>
+<div class="content">
 <%= form_with(model: Post.new, local: true) do |f| %>
  <div class="post_title">
   <%= f.label :title %>
@@ -5,7 +7,11 @@
  </div>
  <div class="post_content">
   <%= f.label :content %>
-  <%= f.text_field :content %>
+  <%= f.text_area :content %>
+ </div>
+ <div class="post_image">
+  <%= f.label :image %>
  </div>
  <%= f.submit %>
  <% end %>
+</div>
