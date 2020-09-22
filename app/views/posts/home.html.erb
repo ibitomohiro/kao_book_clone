@@ -1,6 +1,5 @@
-
-<% if logged_in? %>
-<% else %>
-  <% render template: "users/new" %>
-<% end %>
-
+<div class="center jumpbotron">
+<h1>Welcome to kaobook</h1>
+<h2>This is the home page for kaobook</h2>
+<%= link_to "Sign up", new_session_path, class:"btn btn-lg btn-primary" %>
+</div>
