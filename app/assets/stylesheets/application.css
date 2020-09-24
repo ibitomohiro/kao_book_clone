@@ -188,3 +188,16 @@ input {
 .navbar-inverse .navbar-nav>li>a {
   color: #fff;
 }
+
+.section.user-info{
+  margin: 0 auto;
+}
+
+.new-btn h3{
+  text-align: center;
+}
+
+a.btn.btn-primary.btn-lg{
+  margin: 0 auto;
+  
+}
