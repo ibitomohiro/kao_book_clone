@@ -1,18 +1,15 @@
 <h1>新しく投稿する</h1>
-<div class="content">
-<%= form_with(model: Post.new, local: true) do |f| %>
- <div class="post_title">
-  <%= f.label :title %>
-  <%= f.text_field :title %>
- </div>
- <div class="post_content">
-  <%= f.label :content %>
-  <%= f.text_area :content %>
- </div>
- <div class="post_image">
-  <%= f.label :image %>
-  <%= f.file_field :image %>
- </div>
- <%= f.submit %>
- <% end %>
-</div>
+<%= form_with(model: @post, local: true) do |f| %>
+  <%= render 'shared/post_error_msg' %>
+  <div class="row">
+     <div class="col-md-6 col-md-offset-3">
+      <%= f.label :title %>
+      <%= f.text_field :title, placeholder: "Put title here", class: 'form-control'%>
+      <%= f.label :content %>
+      <%= f.text_area :content, placeholder: "Compose new post...", class: 'form-control'%>
+      <%= f.label :image %>
+      <%= f.file_field :image,class: 'form-control' %>
+      <%= f.submit "Post", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

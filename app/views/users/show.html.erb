@@ -1,3 +1,30 @@
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="post_form">
+        <%= link_to "Create New Post", new_post_path, class: 'btn btn-primary' %>
+      </section>
+    </aside>
+    <table>
+    <h3>my post</h3>
+    <% @user.posts.each do |post| %>
+      <p>post No<%= post.id %></p>
+      <%= post.title %>
+      <%= post.content %>
+      <%= image_tag post.image.url, size: '100x100' %>
+      <% if current_user?(post.user)  %>
+       <%= link_to "delete", post, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+     <% end %> 
+      
+    <% end %>    
+    
+    </table>
+  </div>
+<% else %>
 <% provide(:title, @user.name) %>
 <div class="row">
   <aside class="col-md-4">
@@ -9,3 +36,4 @@
     </section>
   </aside>
 </div>
+<% end %>
