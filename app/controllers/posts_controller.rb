@@ -10,6 +10,10 @@ class PostsController < ApplicationController
     @post = current_user.posts.build if logged_in?
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
