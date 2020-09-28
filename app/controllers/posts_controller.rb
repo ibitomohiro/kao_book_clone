@@ -14,6 +14,12 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    redirect_to user_path(current_user.id)
+  end
+
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
@@ -30,6 +36,11 @@ class PostsController < ApplicationController
     flash[:success] = "Post deleted"
     redirect_to request.referrer || root_url
   end
+
+  # def confirm 
+  #   @post = current_user.posts.build(post_params)
+  #   @post.id = prams[:id]
+  # end
 
   private
   def post_params
