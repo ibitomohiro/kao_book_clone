@@ -1,5 +1,5 @@
 <h1>新しく投稿する</h1>
-<%= form_with(model: @post, local: true) do |f| %>
+<%= form_with(model: @post, local: true, url: choose_new_or_edit ) do |f| %>
   <%= render 'shared/post_error_msg' %>
   <div class="row">
      <div class="col-md-6 col-md-offset-3">

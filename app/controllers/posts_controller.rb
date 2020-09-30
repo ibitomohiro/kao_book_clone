@@ -37,14 +37,17 @@ class PostsController < ApplicationController
     redirect_to request.referrer || root_url
   end
 
-  # def confirm 
-  #   @post = current_user.posts.build(post_params)
-  #   @post.id = prams[:id]
-  # end
+  def confirm 
+    @post = current_user.posts.new(post_params)
+     if @post.invalid?
+      flash.now[:danger] = "contents must be filled in!"
+      render 'new'
+     end
+  end
 
   private
   def post_params
-    params.require(:post).permit(:title, :content, :image)
+    params.require(:post).permit(:title, :content, :image, :iamge_cache)
   end
 
 end
