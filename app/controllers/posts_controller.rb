@@ -40,7 +40,7 @@ class PostsController < ApplicationController
   def confirm 
     @post = current_user.posts.new(post_params)
      if @post.invalid?
-      flash.now[:danger] = "contents must be filled in!"
+      flash.now[:danger] = "contents and image must be filled in!"
       render 'new'
      end
   end
