@@ -53,6 +53,11 @@ h2 {
   font-weight: normal;
   color: #777;
 }
+h3{
+  font-size: 2em;
+  text-align: center;
+  font-weight: normal;
+}
 
 p {
   font-size: 1.1em;
@@ -209,4 +214,10 @@ a.btn.btn-primary.btn-lg{
   overflow: auto;
   padding: 10px 0;
   border-bottom: 1px solid $gray-lighter;
+}
+
+.post-contents img {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }
