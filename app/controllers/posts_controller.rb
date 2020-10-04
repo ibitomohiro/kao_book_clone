@@ -22,9 +22,10 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
+    @user = @post.user
     if @post.save
       flash[:success] = "Posted successfully!"
-      redirect_to new_post_path
+      redirect_to (user_url(@user.id))
     else
       render 'new'
     end
