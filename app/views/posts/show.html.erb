@@ -1,0 +1,8 @@
+<p>
+  <strong>Contents:</strong>
+  <p><%= @post.content %></p>
+  <%= image_tag @post.image.url, size: '200x200' %>
+</p>
+
+<%= link_to 'edit', edit_post_path(@post.id), class: 'btn btn-info' %>
+<%= link_to 'back', user_path(current_user.id), class: 'btn btn-danger' %>
